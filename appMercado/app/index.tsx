@@ -1,11 +1,35 @@
-import { View, Text, TextInput, Button, Pressable } from "react-native";
+import { View, Text, TextInput, Button, Pressable, FlatList } from "react-native";
 import { StyleSheet } from "react-native";
+import { useState } from "react";
 
 
 
 
 export default function Home(){
+
+    
+const [item, setItem] = useState(0);
+
+
+
+function adicionarItem(){
+    setItem(item + 1);
+    
+
+}
+
+function acrescentarQuantidade(){
+    
+
+}
+   
+    
+    
+
     return(
+        
+
+        
         <View style={styles.container}>
 
             <Text style={styles.titulo}>Lista de Compras</Text>
@@ -21,21 +45,33 @@ export default function Home(){
 
             {/* Botão */}
 
-            <Pressable style={styles.btn}>
+            <Pressable style={styles.btn} >
                 <Text style={styles.btnText}> Adicionar</Text>
             </Pressable>
 
             {/* Lista de compras */}
 
-            <View style={styles.containerLista}>
+            <FlatList
+            data={
+                
+            } 
+            renderItem={}
+            
+            style={styles.containerLista}>
+                
 
-            </View>
+
+
+
+
+            </FlatList>
             
             
         </View>   
         
     )
 }
+
 
 
 const styles = StyleSheet.create({
@@ -106,7 +142,7 @@ const styles = StyleSheet.create({
 
 
     containerLista: {
-        flex: 1,
+        
         backgroundColor: '#fff',
         marginTop: 20,
         borderRadius: 5,
